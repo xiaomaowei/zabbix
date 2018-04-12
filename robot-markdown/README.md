@@ -38,7 +38,7 @@
 	 - 默认接收人:服务器：{HOST.NAME} 发生：{TRIGGER.NAME}故障
 	 - 默认信息:
 
-		#### {TRIGGER.NAME} 发生问题
+	    #### {TRIGGER.NAME} 发生问题
 	    ###### 故障时间：{EVENT.DATE} {EVENT.TIME}
 	    ###### 故障时长：{EVENT.AGE}
 	    ###### 告警级别：{TRIGGER.SEVERITY}
