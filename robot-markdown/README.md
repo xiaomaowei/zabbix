@@ -8,7 +8,6 @@
  - dingding_markdown.py 脚本本体，需要更改的地方只有一个
  - config.read('/usr/local/zabbix/conf/dingding.conf') #机器人配置文件的路径
  - dingding.conf 机器人配置文件，两个需要更改的地方
-	
 
 	    log=/var/log/zabbix/zabbix_dingding.log #存放机器人日志的路径
 	    webhook=https://oapi.dingtalk.com/robot/send?access_token=xxxx #机器人的token
@@ -36,16 +35,17 @@
 	 - 默认操作步骤持续时间：1h
 	 - 默认接收人:服务器：{HOST.NAME} 发生：{TRIGGER.NAME}故障
 	 - 默认信息:
-	 
-		    #### {TRIGGER.NAME} 发生问题
-		    ###### 故障时间：{EVENT.DATE} {EVENT.TIME}
-		    ###### 故障时长：{EVENT.AGE}
-		    ###### 告警级别：{TRIGGER.SEVERITY}
-		    ###### 故障事件ID：[{EVENT.ID}](http://这边替换掉zabbix的ip或是域名/tr_events.php?triggerid={TRIGGER.ID}&eventid={EVENT.ID})
-		    ###### 故障主机IP：{HOST.IP}
-		    ###### 故障主机名：{HOST.NAME}
-		    ###### 故障是否确认：{EVENT.ACK.STATUS}
-		    #### 当前状态：{ITEM.LASTVALUE}
+
+		#### {TRIGGER.NAME} 发生问题
+	    ###### 故障时间：{EVENT.DATE} {EVENT.TIME}
+	    ###### 故障时长：{EVENT.AGE}
+	    ###### 告警级别：{TRIGGER.SEVERITY}
+	    ###### 故障事件ID：[{EVENT.ID}](http://这边替换掉zabbix的ip或是域名/tr_events.php?triggerid={TRIGGER.ID}&eventid={EVENT.ID})
+	    ###### 故障主机IP：{HOST.IP}
+	    ###### 故障主机名：{HOST.NAME}
+	    ###### 故障是否确认：{EVENT.ACK.STATUS}
+	    #### 当前状态：{ITEM.LASTVALUE}
+	    
  - 操作：
  
 	    发送消息给用户: Admin (Zabbix Administrator) 通过 钉钉机器人 立即地 默认
