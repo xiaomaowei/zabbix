@@ -1,5 +1,5 @@
 # zabbix 钉钉机器人 markdown 版本
-    取自网上的版本，来源已经忘记了。。。
+    取自网上的版本更改的，来源已经忘记了。。。
 
 1.  **配置文件**
     - dingding_markdown.py 脚本本体，需要更改的地方只有一个
@@ -27,15 +27,15 @@
      >> 默认操作步骤持续时间：1h <br>
      >> 默认接收人:服务器：{HOST.NAME} 发生：{TRIGGER.NAME}故障 <br>
      >> 默认信息: <br>
-          #### {TRIGGER.NAME} 发生问题
-          ###### 故障时间：{EVENT.DATE} {EVENT.TIME}
-          ###### 故障时长：{EVENT.AGE}
-          ###### 告警级别：{TRIGGER.SEVERITY}
-          ###### 故障事件ID：[{EVENT.ID}](http://这边替换掉zabbix的ip或是域名/tr_events.php?triggerid={TRIGGER.ID}&eventid={EVENT.ID})
-          ###### 故障主机IP：{HOST.IP}
-          ###### 故障主机名：{HOST.NAME}
-          ###### 故障是否确认：{EVENT.ACK.STATUS}
-          #### 当前状态：{ITEM.LASTVALUE}
+            #### {TRIGGER.NAME} 发生问题
+            ###### 故障时间：{EVENT.DATE} {EVENT.TIME}
+            ###### 故障时长：{EVENT.AGE}
+            ###### 告警级别：{TRIGGER.SEVERITY}
+            ###### 故障事件ID：[{EVENT.ID}](http://这边替换掉zabbix的ip或是域名/tr_events.php?triggerid={TRIGGER.ID}&eventid={EVENT.ID})
+            ###### 故障主机IP：{HOST.IP}
+            ###### 故障主机名：{HOST.NAME}
+            ###### 故障是否确认：{EVENT.ACK.STATUS}
+            #### 当前状态：{ITEM.LASTVALUE}
 
      >> 操作：
      >>     发送消息给用户: Admin (Zabbix Administrator) 通过 钉钉机器人 立即地 默认
