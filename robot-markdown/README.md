@@ -26,6 +26,7 @@
      > 操作
      >> 默认操作步骤持续时间：1h <br>
      >> 默认接收人:服务器：{HOST.NAME} 发生：{TRIGGER.NAME}故障 <br>
+<<<<<<< HEAD
      >> 默认信息: <br>
             #### {TRIGGER.NAME} 发生问题
             ###### 故障时间：{EVENT.DATE} {EVENT.TIME}
@@ -36,6 +37,18 @@
             ###### 故障主机名：{HOST.NAME}
             ###### 故障是否确认：{EVENT.ACK.STATUS}
             #### 当前状态：{ITEM.LASTVALUE}
+=======
+     >> 默认信息:
+             #### {TRIGGER.NAME} 发生问题
+             ###### 故障时间：{EVENT.DATE} {EVENT.TIME}
+             ###### 故障时长：{EVENT.AGE}
+             ###### 告警级别：{TRIGGER.SEVERITY}
+             ###### 故障事件ID：[{EVENT.ID}](http://这边替换掉zabbix的ip或是域名/tr_events.php?triggerid={TRIGGER.ID}&eventid={EVENT.ID})
+             ###### 故障主机IP：{HOST.IP}
+             ###### 故障主机名：{HOST.NAME}
+             ##### 故障是否确认：{EVENT.ACK.STATUS}
+             #### 当前状态：{ITEM.LASTVALUE}
+>>>>>>> 4cb2c7e1a1a77a360ae36b177e215cff81e9a951
 
      >> 操作：
      >>     发送消息给用户: Admin (Zabbix Administrator) 通过 钉钉机器人 立即地 默认
@@ -43,7 +56,7 @@
      > 恢复操作
      >> 默认操作步骤持续时间：1h <br>
      >> 默认接收人:服务器：{HOST.NAME} 问题：{TRIGGER.NAME}已恢复！ <br>
-     >> 默认信息: <br>
+     >> 默认信息:
           #### {TRIGGER.NAME} 已经恢复
           ###### 恢复时间：{EVENT.RECOVERY.DATE} {EVENT.RECOVERY.TIME}
           ###### 故障时长：{EVENT.AGE}
@@ -60,7 +73,7 @@
      > 确认操作
      >> 默认操作步骤持续时间：1h <br>
      >> 默认接收人:服务器：{HOST.NAME} 问题：{TRIGGER.NAME}已确认！ <br>
-     >> 默认信息: <br>
+     >> 默认信息: 
           #### 管理员{USER.FULLNAME} 已经发布故障原因
           ###### 确认时间：{ACK.DATE} {ACK.TIME}
           ###### 故障时长：{EVENT.AGE}
