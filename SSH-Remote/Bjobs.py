@@ -4,10 +4,10 @@
 import paramiko
 import os
 
-hostname = '172.16.22.12'
-username = 'hzwttech_dppan_1'
+hostname = 'HPC ServerIP'
+username = 'SSH USERNAME'
 
-key_file = '/home/lambda/lambdacal/gw_server/data/hzwttech_dppan_1.id' #私钥文件
+key_file = 'SSH Key PATH' #私钥文件
 key_file_pwd = ''  #私钥密码
 
 
@@ -23,6 +23,6 @@ ssh = paramiko.SSHClient()
 ssh.load_system_host_keys(filename='/root/.ssh/known_hosts')
 ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 ssh.connect(hostname=hostname,username=username,pkey=key)
-stdin,stdout,stderr=ssh.exec_command('ls') #执行远程主机系统命令
+stdin,stdout,stderr=ssh.exec_command('command u want') #执行远程主机系统命令
 print stdout.read()
 ssh.close()
