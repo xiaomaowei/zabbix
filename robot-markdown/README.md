@@ -28,29 +28,31 @@
  - 脚本参数：{ALERT.MESSAGE} {ALERT.SENDTO} {ALERT.SUBJECT} 3个，必须按照顺序
  
 ### zabbix web界面，配置 =》 动作 =》 事件源【触发器】=》 创建动作
- **- 动作**
+ - **动作**
 
 	 - 名称：钉钉报警
- **- 操作**
+
+ - **操作**
+
 	 - 默认操作步骤持续时间：1h
 	 - 默认接收人:服务器：{HOST.NAME} 发生：{TRIGGER.NAME}故障
 	 - 默认信息:
 
-	    #### {TRIGGER.NAME} 发生问题
-	    ###### 故障时间：{EVENT.DATE} {EVENT.TIME}
-	    ###### 故障时长：{EVENT.AGE}
-	    ###### 告警级别：{TRIGGER.SEVERITY}
-	    ###### 故障事件ID：[{EVENT.ID}](http://这边替换掉zabbix的ip或是域名/tr_events.php?triggerid={TRIGGER.ID}&eventid={EVENT.ID})
-	    ###### 故障主机IP：{HOST.IP}
-	    ###### 故障主机名：{HOST.NAME}
-	    ###### 故障是否确认：{EVENT.ACK.STATUS}
-	    #### 当前状态：{ITEM.LASTVALUE}
+		    #### {TRIGGER.NAME} 发生问题
+		    ###### 故障时间：{EVENT.DATE} {EVENT.TIME}
+		    ###### 故障时长：{EVENT.AGE}
+		    ###### 告警级别：{TRIGGER.SEVERITY}
+		    ###### 故障事件ID：[{EVENT.ID}](http://这边替换掉zabbix的ip或是域名/tr_events.php?triggerid={TRIGGER.ID}&eventid={EVENT.ID})
+		    ###### 故障主机IP：{HOST.IP}
+		    ###### 故障主机名：{HOST.NAME}
+		    ###### 故障是否确认：{EVENT.ACK.STATUS}
+		    #### 当前状态：{ITEM.LASTVALUE}
 	    
  - 操作：
  
 	    发送消息给用户: Admin (Zabbix Administrator) 通过 钉钉机器人 立即地 默认
 	    
- - **恢复操作**
+- **恢复操作**
 
 	 - 默认操作步骤持续时间：1h
 	 - 默认接收人:服务器：{HOST.NAME} 问题：{TRIGGER.NAME}已恢复！
