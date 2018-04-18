@@ -5,7 +5,8 @@ import subprocess
 import os
 import json
 def check_container_stats(container_name,collect_item):
-    #docker_client = docker_client.containers.get(container_name)
+
+    # docker_client = docker_client.containers.get(container_name)
     global result
     container_collect=docker_client.containers.get(container_name).stats(stream=True)
     old_result=json.loads(container_collect.next())
@@ -16,7 +17,7 @@ def check_container_stats(container_name,collect_item):
         result=new_result['cpu_stats']['cpu_usage']['total_usage'] - old_result['cpu_stats']['cpu_usage']['total_usage']
 
     elif collect_item == 'cpu_system_usage':
-        result=(new_result['cpu_stats']['system_cpu_usage'] - old_result['cpu_stats']['system_cpu_usage'])/10 ^ 8
+        result = float((new_result['cpu_stats']['system_cpu_usage'] - old_result['cpu_stats']['system_cpu_usage'])) / 10 ** 9
 
     elif collect_item == 'cpu_percent':
         cpu_total_usage=new_result['cpu_stats']['cpu_usage']['total_usage'] - old_result['cpu_stats']['cpu_usage']['total_usage']
