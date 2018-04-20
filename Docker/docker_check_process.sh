@@ -6,7 +6,8 @@ if [ $# -gt 2 ];then
 fi
 
 function check_proc(){
-    sudo /bin/docker exec $1 ps aux | grep -v "ps aux" | grep $1  > /dev/null 2>&1
+    # sudo /bin/docker exec $1 ps aux | grep -v "ps aux" | grep $1  > /dev/null 2>&1
+    sudo /bin/docker exec $1 ps aux | wc -l  > /dev/null 2>&1
     if [ $? -ne 0 ];then
         echo "0"
     else
