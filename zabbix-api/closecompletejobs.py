@@ -11,5 +11,5 @@ zapi.login("username", "password")
 
 jobs = zapi.item.update(
     itemid=sys.argv[1],
-    status="0"
+    status="1"
 )
