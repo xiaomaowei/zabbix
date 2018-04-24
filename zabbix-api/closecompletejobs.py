@@ -1,15 +1,24 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # Author:Denis
-# 2018/04/20
+# 2018/04/24
 
 import sys
 from pyzabbix import ZabbixAPI
 
-zapi = ZabbixAPI("http://zabbix ip:port")
-zapi.login("username", "password")
+zapi = ZabbixAPI("http://zabbix:port")
+zapi.login('user', 'pw')
 
-jobs = zapi.item.update(
-    itemid=sys.argv[1],
-    status="1"
+name = sys.argv[1]
+
+jobid = name.split(':')[1]
+
+result = zapi.item.get(
+	search={"key_": jobid}
 )
+
+for items in result:
+	zapi.item.update(
+		itemid=items['itemid'],
+		status=1
+	)
