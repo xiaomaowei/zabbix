@@ -7,12 +7,12 @@ printf "{\n"
 printf  '\t'"\"data\":["
 for ((i=0;i<$length;i++))
 do
-        volume=`mount -l |grep ${nfsarray[$i]} |awk '{print $3}'`
-        printf '\n\t\t{'
-        printf "\"{#NFSVOLUME}\":\"$volume\"}"
-        if [ $i -lt $[$length-1] ];then
-                printf ','
-        fi
+    volume=`mount -l |grep ${nfsarray[$i]} |awk '{print $3}'`
+    printf '\n\t\t{'
+    printf "\"{#NFSVOLUME}\":\"$volume\"}"
+    if [ $i -lt $[$length-1] ];then
+            printf ','
+    fi
 done
 printf  "\n\t]\n"
 printf "}\n"
